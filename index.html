@@ -72,9 +72,9 @@ button:hover { background: #ff2e63; }
 
 <div class="question">
 <p>2. Qui a fait le premier pas ?</p>
-<input type="radio" name="q2" value="1"> Moi<br>
+<input type="radio" name="q2" value="0"> Moi<br>
 <input type="radio" name="q2" value="1"> Le destin<br>
-<input type="radio" name="q2" value="1"> Toi<br>
+<input type="radio" name="q2" value="0"> Toi<br>
 <input type="radio" name="q2" value="0"> Ton chat<br>
 </div>
 
@@ -120,7 +120,7 @@ button:hover { background: #ff2e63; }
 
 <div class="question">
 <p>8. Pourquoi ce quiz existe ?</p>
-<input type="radio" name="q8" value="1"> Pour te faire sourire 😘<br>
+<input type="radio" name="q8" value="0"> Pour te faire sourire 😘<br>
 <input type="radio" name="q8" value="0"> Pour dominer le monde<br>
 <input type="radio" name="q8" value="0"> Pour te piéger<br>
 <input type="radio" name="q8" value="1"> Pour tester ton QI amoureux 🤡<br>
@@ -145,7 +145,7 @@ button:hover { background: #ff2e63; }
 <script>
 function checkQuiz() {
   let score = 0;
-  let total = 8;
+  let total = 9;
 
   let answers = document.querySelectorAll('input[type="radio"]:checked');
   answers.forEach(answer => { score += parseInt(answer.value); });
