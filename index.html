@@ -57,14 +57,14 @@ button:hover { background: #ff2e63; }
 </head>
 <body>
 
-<h2>💖 Test Ultime : Me connais-tu vraiment ? 💖</h2>
+<h2>💖 Test Ultime : Connais-tu vraiment notre couple ? 💖</h2>
 <p>70% minimum pour débloquer ta surprise 😏</p>
 
 <form id="quizForm">
 
 <div class="question">
 <p>1. Où on s’est rencontrés ?</p>
-<input type="radio" name="q1" value="1" required> Café du coin<br>
+<input type="radio" name="q1" value="1" required> En ligne<br>
 <input type="radio" name="q1" value="0"> Dans un ascenseur bloqué<br>
 <input type="radio" name="q1" value="0"> À cause d’un pigeon<br>
 <input type="radio" name="q1" value="0"> Dans mes rêves<br>
@@ -73,14 +73,14 @@ button:hover { background: #ff2e63; }
 <div class="question">
 <p>2. Qui a fait le premier pas ?</p>
 <input type="radio" name="q2" value="1"> Moi<br>
-<input type="radio" name="q2" value="0"> Le destin<br>
-<input type="radio" name="q2" value="0"> Mon ego<br>
+<input type="radio" name="q2" value="1"> Le destin<br>
+<input type="radio" name="q2" value="1"> Toi<br>
 <input type="radio" name="q2" value="0"> Ton chat<br>
 </div>
 
 <div class="question">
 <p>3. Notre premier fou rire était à cause de :</p>
-<input type="radio" name="q3" value="1"> Une blague sur les chats<br>
+<input type="radio" name="q3" value="1"> J'ai alzheimer dsl<br>
 <input type="radio" name="q3" value="0"> Un serveur catastrophique<br>
 <input type="radio" name="q3" value="0"> Une blague nulle<br>
 <input type="radio" name="q3" value="0"> Un pigeon encore<br>
@@ -88,34 +88,34 @@ button:hover { background: #ff2e63; }
 
 <div class="question">
 <p>4. Mon petit défaut mignon :</p>
-<input type="radio" name="q4" value="1"> Ma manie de chanter sous la douche<br>
-<input type="radio" name="q4" value="0"> Je suis trop parfait<br>
-<input type="radio" name="q4" value="0"> Je parle aux plantes<br>
-<input type="radio" name="q4" value="0"> Je ronfle l’hymne national<br>
+<input type="radio" name="q4" value="1"> Je suis irrité quand ça va pas pour toi<br>
+<input type="radio" name="q4" value="0"> Je suis trop parfait, rien à dire<br>
+<input type="radio" name="q4" value="0"> Je parle aux plantes, eh ouais ma vielle<br>
+<input type="radio" name="q4" value="0"> Je suis aigri gneugneu<br>
 </div>
 
 <div class="question">
 <p>5. Si on partait demain en voyage :</p>
-<input type="radio" name="q5" value="1"> À la plage de Bali<br>
-<input type="radio" name="q5" value="0"> Sur Mars<br>
-<input type="radio" name="q5" value="0"> Dans ma cuisine<br>
-<input type="radio" name="q5" value="0"> Chez ma mère<br>
+<input type="radio" name="q5" value="0"> À la plage de Bali<br>
+<input type="radio" name="q5" value="0"> En australie<br>
+<input type="radio" name="q5" value="1"> Tout sauf l'Inde<br>
+<input type="radio" name="q5" value="0"> Chez ta mère<br>
 </div>
 
 <div class="question">
-<p>6. Notre inside joke :</p>
-<input type="radio" name="q6" value="1"> “La licorne rose”<br>
+<p>6. Nos blaques preferées :</p>
+<input type="radio" name="q6" value="0"> “La licorne rose”<br>
 <input type="radio" name="q6" value="0"> “Pigeon 2.0”<br>
-<input type="radio" name="q6" value="0"> “Banane cosmique”<br>
-<input type="radio" name="q6" value="0"> “Opération spaghetti”<br>
+<input type="radio" name="q6" value="0"> “Banane biloute”<br>
+<input type="radio" name="q6" value="1"> “Trop vieille pour comprendre cette question”<br>
 </div>
 
 <div class="question">
 <p>7. Ce que j’aime le plus chez toi :</p>
-<input type="radio" name="q7" value="1"> Ton sourire irrésistible<br>
-<input type="radio" name="q7" value="0"> Ta collection de chaussettes<br>
+<input type="radio" name="q7" value="0"> Ton sourire irrésistible<br>
+<input type="radio" name="q7" value="1"> Ta capacité à t'améliorer<br>
 <input type="radio" name="q7" value="0"> Ton talent pour râler<br>
-<input type="radio" name="q7" value="0"> Ton imitation de dauphin<br>
+<input type="radio" name="q7" value="0"> Ton imitation d'anglais<br>
 </div>
 
 <div class="question">
@@ -123,9 +123,16 @@ button:hover { background: #ff2e63; }
 <input type="radio" name="q8" value="1"> Pour te faire sourire 😘<br>
 <input type="radio" name="q8" value="0"> Pour dominer le monde<br>
 <input type="radio" name="q8" value="0"> Pour te piéger<br>
-<input type="radio" name="q8" value="0"> Pour tester ton QI amoureux<br>
+<input type="radio" name="q8" value="1"> Pour tester ton QI amoureux 🤡<br>
 </div>
 
+<div class="question">
+<p>9. Pour finir, la première série qu’on a regardée ensemble :</p>
+<input type="radio" name="q19" value="0"> Stranger Things<br>
+<input type="radio" name="q19" value="0"> Arcane<br>
+<input type="radio" name="q19" value="1"> Sex education<br>
+<input type="radio" name="q19" value="0"> La reproduction chez les singes<br>
+  
 <button type="button" onclick="checkQuiz()">Voir le résultat 💌</button>
 
 </form>
@@ -152,7 +159,7 @@ function checkQuiz() {
     launchConfetti();
     document.getElementById('loveSound').play(); // joue le son
     document.getElementById("result").innerHTML =
-      "Tu me connais beaucoup trop bien 😏💖<br><br><a href='TON_LIEN_BEMYN_ICI' target='_blank'><button>Accéder à ta surprise 🎁</button></a>";
+      "Tu me connais beaucoup trop bien 😏💖<br><br><a href='https://bemyval.co/a8_vvqhlsui' target='_blank'><button>Accéder à ta surprise 🎁</button></a>";
   } else {
     document.getElementById("result").innerHTML =
       "Oups… Il faut encore réviser notre histoire 😈<br><br><button onclick='location.reload()'>Réessayer</button>";
