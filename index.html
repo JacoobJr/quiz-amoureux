@@ -39,6 +39,8 @@ button:hover { background: #ff2e63; }
 
 #result { margin-top: 25px; font-size: 18px; }
 
+.scoreInfo { font-size: 14px; color: #555; margin-top: 10px; }
+
 .heart, .confetti {
   position: fixed;
   top: -50px;
@@ -58,7 +60,7 @@ button:hover { background: #ff2e63; }
 <body>
 
 <h2>💖 Test Ultime : Connais-tu vraiment notre couple ? 💖</h2>
-<p>7/9 minimum pour débloquer ta surprise 😏</p>
+<p>7/10 minimum pour débloquer ta surprise 😏</p>
 
 <form id="quizForm">
 
@@ -147,7 +149,7 @@ button:hover { background: #ff2e63; }
 function checkQuiz() {
   let score = 0;
   let total = 9; // 9 questions
-  let wrong = []; // tableau pour les questions fausses
+  let wrong = [];
 
   for (let i = 1; i <= total; i++) {
     let answer = document.querySelector('input[name="q'+i+'"]:checked');
@@ -163,16 +165,22 @@ function checkQuiz() {
 
   let percentage = (score / total) * 100;
 
+  let scoreText = "<div class='scoreInfo'>Score : " + score + "/" + total + "</div>";
+
   if (percentage >= 70) {
     launchHearts();
     launchConfetti();
     document.getElementById('loveSound').play();
+
+    let wrongText = wrong.length > 0 ? "<br>Erreurs sur la question(s) : " + wrong.join(", ") : "";
+    
     document.getElementById("result").innerHTML =
-      "Tu me connais beaucoup trop bien 😏💖<br><br><a href='https://bemyval.co/a8_vvqhlsui' target='_blank'><button>Accéder à ta surprise 🎁</button></a>";
+      "Tu me connais beaucoup trop bien 😏💖<br><br><a href='https://bemyval.co/a8_vvqhlsui' target='_blank'><button>Accéder à ta surprise 🎁</button></a>" +
+      wrongText + scoreText;
   } else {
     let wrongText = wrong.length > 0 ? "<br>Erreurs sur la question(s) : " + wrong.join(", ") : "";
     document.getElementById("result").innerHTML =
-      "Oups… Il faut encore réviser notre histoire ! 😈" + wrongText + "<br><br><button onclick='location.reload()'>Réessayer</button>";
+      "Oups… Il faut encore réviser notre histoire ! 😈" + wrongText + scoreText + "<br><br><button onclick='location.reload()'>Réessayer</button>";
   }
 }
 
