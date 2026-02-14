@@ -97,13 +97,13 @@ button:hover { background: #ff2e63; }
 <div class="question">
 <p>5. Si on partait demain en voyage :</p>
 <input type="radio" name="q5" value="0"> À la plage de Bali<br>
-<input type="radio" name="q5" value="0"> En australie<br>
+<input type="radio" name="q5" value="0"> En Australie<br>
 <input type="radio" name="q5" value="1"> Tout sauf l'Inde<br>
 <input type="radio" name="q5" value="0"> Chez ta mère<br>
 </div>
 
 <div class="question">
-<p>6. Nos blaques preferées :</p>
+<p>6. Nos blagues préférées :</p>
 <input type="radio" name="q6" value="0"> “La licorne rose”<br>
 <input type="radio" name="q6" value="0"> “Pigeon 2.0”<br>
 <input type="radio" name="q6" value="0"> “Banane biloute”<br>
@@ -128,11 +128,12 @@ button:hover { background: #ff2e63; }
 
 <div class="question">
 <p>9. Pour finir, la première série qu’on a regardée ensemble :</p>
-<input type="radio" name="q19" value="0"> Stranger Things<br>
-<input type="radio" name="q19" value="0"> Arcane<br>
-<input type="radio" name="q19" value="1"> Sex education<br>
-<input type="radio" name="q19" value="0"> La reproduction chez les singes<br>
-  
+<input type="radio" name="q9" value="0"> Stranger Things<br>
+<input type="radio" name="q9" value="0"> Arcane<br>
+<input type="radio" name="q9" value="1"> Sex education<br>
+<input type="radio" name="q9" value="0"> La reproduction chez les singes<br>
+</div>
+
 <button type="button" onclick="checkQuiz()">Voir le résultat 💌</button>
 
 </form>
@@ -145,7 +146,7 @@ button:hover { background: #ff2e63; }
 <script>
 function checkQuiz() {
   let score = 0;
-  let total = 9;
+  let total = 9; // 9 questions
 
   let answers = document.querySelectorAll('input[type="radio"]:checked');
   answers.forEach(answer => { score += parseInt(answer.value); });
@@ -157,7 +158,7 @@ function checkQuiz() {
   if (percentage >= 70) {
     launchHearts();
     launchConfetti();
-    document.getElementById('loveSound').play(); // joue le son
+    document.getElementById('loveSound').play();
     document.getElementById("result").innerHTML =
       "Tu me connais beaucoup trop bien 😏💖<br><br><a href='https://bemyval.co/a8_vvqhlsui' target='_blank'><button>Accéder à ta surprise 🎁</button></a>";
   } else {
