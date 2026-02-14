@@ -147,9 +147,17 @@ button:hover { background: #ff2e63; }
 function checkQuiz() {
   let score = 0;
   let total = 9; // 9 questions
+  let wrong = []; // tableau pour les questions fausses
 
-  let answers = document.querySelectorAll('input[type="radio"]:checked');
-  answers.forEach(answer => { score += parseInt(answer.value); });
+  for (let i = 1; i <= total; i++) {
+    let answer = document.querySelector('input[name="q'+i+'"]:checked');
+    if (!answer) continue;
+    if (parseInt(answer.value) === 1) {
+      score++;
+    } else {
+      wrong.push(i);
+    }
+  }
 
   document.querySelector('button[onclick="checkQuiz()"]').style.display = "none";
 
@@ -162,8 +170,9 @@ function checkQuiz() {
     document.getElementById("result").innerHTML =
       "Tu me connais beaucoup trop bien 😏💖<br><br><a href='https://bemyval.co/a8_vvqhlsui' target='_blank'><button>Accéder à ta surprise 🎁</button></a>";
   } else {
+    let wrongText = wrong.length > 0 ? "<br>Erreurs sur la question(s) : " + wrong.join(", ") : "";
     document.getElementById("result").innerHTML =
-      "Oups… Il faut encore réviser notre histoire ! Recommence 😈<br><br><button onclick='location.reload()'>Réessayer</button>";
+      "Oups… Il faut encore réviser notre histoire ! 😈" + wrongText + "<br><br><button onclick='location.reload()'>Réessayer</button>";
   }
 }
 
